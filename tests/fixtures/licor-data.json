@@ -1,0 +1,14 @@
+{
+  "message": "",
+  "max_results": false,
+  "data": [
+    { "logger_sn": "20029439", "sensor_sn": "21111111", "timestamp": "2026-11-13 12:00:00Z", "data_type": "Avg", "data_type_id": "1", "value": 27.4, "unit": "°C", "sensor_measurement_type": "Temperature" },
+    { "logger_sn": "20029439", "sensor_sn": "21111111", "timestamp": "2026-11-13 12:15:00Z", "data_type": "Avg", "data_type_id": "1", "value": 27.9, "unit": "°C", "sensor_measurement_type": "Temperature" },
+    { "logger_sn": "20029439", "sensor_sn": "21111111", "timestamp": "2026-11-13 12:15:00Z", "data_type": "Avg", "data_type_id": "2", "value": 74, "unit": "%", "sensor_measurement_type": "RH" },
+    { "logger_sn": "20029439", "sensor_sn": "21222222", "timestamp": "2026-11-13 12:15:00Z", "data_type": "Sum", "data_type_id": "3", "value": 0.2, "unit": "mm", "sensor_measurement_type": "Rain" },
+    { "logger_sn": "20029439", "sensor_sn": "21333333", "timestamp": "2026-11-13 12:15:00Z", "data_type": "Max", "data_type_id": "4", "value": 6.1, "unit": "m/s", "sensor_measurement_type": "Wind Speed" },
+    { "logger_sn": "20029439", "sensor_sn": "21333333", "timestamp": "2026-11-13 12:15:00Z", "data_type": "Avg", "data_type_id": "5", "value": null, "unit": "m/s", "sensor_measurement_type": "Wind Speed" },
+    { "logger_sn": "20029439", "timestamp": "not-a-date", "value": 1 },
+    { "bogus": true }
+  ]
+}

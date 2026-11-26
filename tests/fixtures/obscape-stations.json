@@ -1,0 +1,8 @@
+[
+  { "id": "101", "name": "Buoy A", "latitude": "17.9000", "longitude": "-76.8000", "reference": "WGS84",
+    "devices": {
+      "camera": { "serial": "CAM-1", "online": "1", "charged": "1", "inposition": "1", "inrange": null, "settings": { "sampint": "3600", "commint": "3600", "fps": "2", "burstsize": "10" } },
+      "wavegauge": { "serial": "WG-1", "online": "1", "charged": "1", "inposition": null, "inrange": null, "settings": { "sampint": "600" } }
+    } },
+  { "id": "102", "name": "Spare mast", "latitude": "0", "longitude": "0", "reference": "", "devices": [] }
+]

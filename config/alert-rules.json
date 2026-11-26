@@ -1,0 +1,53 @@
+[
+  {
+    "id": "station-stale-2h",
+    "name": "Station not reporting for 2 hours",
+    "enabled": true,
+    "severity": "warning",
+    "type": "station_stale",
+    "staleMinutes": 120
+  },
+  {
+    "id": "integration-failure",
+    "name": "Provider integration failing",
+    "enabled": true,
+    "severity": "critical",
+    "type": "integration_failure"
+  },
+  {
+    "id": "high-wind-gust",
+    "name": "Wind gust above 17 m/s (Beaufort 8)",
+    "enabled": true,
+    "severity": "warning",
+    "type": "threshold_above",
+    "metricKey": "wind_gust",
+    "threshold": 17
+  },
+  {
+    "id": "high-air-temperature",
+    "name": "Air temperature above 35 °C",
+    "enabled": true,
+    "severity": "warning",
+    "type": "threshold_above",
+    "metricKey": "air_temperature",
+    "threshold": 35
+  },
+  {
+    "id": "wave-height-high",
+    "name": "Significant wave height above 2.5 m",
+    "enabled": true,
+    "severity": "critical",
+    "type": "threshold_above",
+    "metricKey": "wave_height_significant",
+    "threshold": 2.5
+  },
+  {
+    "id": "low-battery-voltage",
+    "name": "Battery voltage below 3.0 V (sensor batteries)",
+    "enabled": false,
+    "severity": "info",
+    "type": "threshold_below",
+    "metricKey": "battery_voltage",
+    "threshold": 3.0
+  }
+]

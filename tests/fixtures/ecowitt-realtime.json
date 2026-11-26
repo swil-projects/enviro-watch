@@ -1,0 +1,38 @@
+{
+  "code": 0,
+  "msg": "success",
+  "time": "1794580000",
+  "data": {
+    "outdoor": {
+      "temperature": { "time": "1794579700", "unit": "ºF", "value": "84.2" },
+      "humidity": { "time": "1794579700", "unit": "%", "value": "71" },
+      "dew_point": { "time": "1794579700", "unit": "ºF", "value": "" }
+    },
+    "wind": {
+      "wind_speed": { "time": "1794579700", "unit": "mph", "value": "10.0" },
+      "wind_direction": { "time": "1794579700", "unit": "º", "value": "267" }
+    },
+    "pressure": {
+      "relative": { "time": "1794579700", "unit": "inHg", "value": "29.92" },
+      "absolute": { "time": "1794579700", "unit": "inHg", "value": "29.50" }
+    },
+    "rainfall": {
+      "rain_rate": { "time": "1794579700", "unit": "in/hr", "value": "0.10" },
+      "daily": { "time": "1794579700", "unit": "in", "value": "1.00" }
+    },
+    "rainfall_piezo": {
+      "daily": { "time": "1794579700", "unit": "in", "value": "0.98" }
+    },
+    "temp_and_humidity_ch1": {
+      "temperature": { "time": "1794579700", "unit": "ºF", "value": "70.0" }
+    },
+    "battery": {
+      "wind_sensor": { "time": "1794579700", "unit": "V", "value": "3.12" },
+      "sensor_array": { "time": "1794579700", "unit": "", "value": "0" }
+    },
+    "WFC01-0xxxxxx8": {
+      "daily": { "time": "1794579700", "unit": "L", "value": "12.5" }
+    },
+    "camera": { "photo": { "time": "1794579700", "url": "https://example.invalid/p.jpg" } }
+  }
+}

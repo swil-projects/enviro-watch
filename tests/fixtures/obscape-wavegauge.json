@@ -1,0 +1,21 @@
+{
+  "data": [
+    { "time": "1794560400", "zref": "0", "level": 1.21, "wdepth": 8.4, "Hm0": 0.82, "Hmax": 1.41, "Tp": 7.9, "Tm02": 5.1, "TEMP": 31.5, "HUM": 40.2, "PATM": 101.2, "VBAT": 12.7, "lat": 17.90001, "lon": -76.80002, "oper": "FLOW", "source": "gsm", "invalid": "0", "tstr": "2026-11-13 09:00:00 [UTC]" },
+    { "time": "1794561000", "zref": "0", "level": 1.25, "wdepth": 8.45, "Hm0": 0.88, "Hmax": 1.52, "Tp": 8.1, "Tm02": 5.2, "TEMP": 31.9, "HUM": 40.0, "PATM": 101.21, "VBAT": 12.7, "lat": 17.90003, "lon": -76.80001, "oper": "FLOW", "source": "gsm", "invalid": "1", "tstr": "2026-11-13 09:10:00 [UTC]" }
+  ],
+  "parameters": [
+    { "name": "level", "symbol": "h", "unit": "m", "caption": "Water level" },
+    { "name": "wdepth", "symbol": "H", "unit": "m", "caption": "Water depth" },
+    { "name": "Hm0", "symbol": "Hm0", "unit": "m", "caption": "Significant wave height" },
+    { "name": "Hmax", "symbol": "Hmax", "unit": "m", "caption": "Maximum wave height" },
+    { "name": "Tp", "symbol": "Tp", "unit": "s", "caption": "Peak wave period" },
+    { "name": "Tm02", "symbol": "Tm02", "unit": "s", "caption": "Mean wave period Tm02" },
+    { "name": "Puu", "symbol": "f", "unit": "Hz", "caption": "Variance-density spectrum" },
+    { "name": "lat", "symbol": "Lat", "unit": "deg N", "caption": "Latitude" },
+    { "name": "lon", "symbol": "Lon", "unit": "deg E", "caption": "Longitude" },
+    { "name": "VBAT", "symbol": "Vbat", "unit": "V", "caption": "Battery voltage" },
+    { "name": "TEMP", "symbol": "Temp", "unit": "deg C", "caption": "Internal temperature" },
+    { "name": "HUM", "symbol": "RH", "unit": "%", "caption": "Relative humidity (PTM)" },
+    { "name": "PATM", "symbol": "Pa", "unit": "kPa", "caption": "Atmospheric pressure (PTM)" }
+  ]
+}
