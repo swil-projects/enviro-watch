@@ -1,6 +1,7 @@
 "use client";
 import { useEffect, useMemo, useState } from "react";
 import { useQuery } from "@tanstack/react-query";
+import { livePolling } from "@/lib/live-polling";
 import { Camera, ChevronLeft, ChevronRight, CircleAlert, Download, ExternalLink, ImageOff, RefreshCw, SkipForward } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Button, buttonVariants } from "@/components/ui/button";
@@ -31,7 +32,7 @@ export function CameraViewer({ stationId, stationName, className }: { stationId:
   const q = useQuery({
     queryKey: ["camera", stationId, range],
     queryFn: () => apiGet<CameraFrames>(`/api/stations/${encodeURIComponent(stationId)}/camera?range=${range}`),
-    refetchInterval: 120_000,
+    ...livePolling(120_000),
     staleTime: 60_000,
   });
 

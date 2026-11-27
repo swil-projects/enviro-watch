@@ -2,6 +2,7 @@
 import Link from "next/link";
 import { useMemo, useState } from "react";
 import { useQuery } from "@tanstack/react-query";
+import { livePolling } from "@/lib/live-polling";
 import { CircleAlert, Pause, Play, Radio } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Pagination, usePagination } from "@/components/ui/pagination";
@@ -33,7 +34,7 @@ export function LiveClient({ initial }: { initial: LiveData }) {
     queryKey: ["live"],
     queryFn: () => apiGet<LiveData>("/api/live"),
     initialData: initial,
-    refetchInterval: paused ? false : Math.max(30, initial.refreshIntervalSeconds) * 1000,
+    ...livePolling(paused ? false : Math.max(30, initial.refreshIntervalSeconds) * 1000),
   });
   const stations = useMemo(() => q.data.stations.filter((s) => !provider || s.station.provider === provider), [q.data, provider]);
   const pg = usePagination(stations, 6);

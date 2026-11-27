@@ -3,6 +3,7 @@ import { useState } from "react";
 import { useMounted, useNow } from "@/hooks/use-client";
 import { usePathname, useRouter } from "next/navigation";
 import { useQuery, useQueryClient, useMutation } from "@tanstack/react-query";
+import { livePolling } from "@/lib/live-polling";
 import { useTheme } from "next-themes";
 import { LogOut, Menu, Moon, RefreshCw, Search, Sun } from "lucide-react";
 import { toast } from "sonner";
@@ -37,7 +38,7 @@ export function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
   const mounted = useMounted();
 
-  const status = useQuery({ queryKey: ["providers-status"], queryFn: () => apiGet<ProviderSummary[]>("/api/providers/status"), refetchInterval: 60_000 });
+  const status = useQuery({ queryKey: ["providers-status"], queryFn: () => apiGet<ProviderSummary[]>("/api/providers/status"), ...livePolling(60_000) });
   const lastSuccess = status.data?.map((p) => p.lastSuccessAt).filter(Boolean).sort().at(-1) ?? null;
 
   const refresh = useMutation({

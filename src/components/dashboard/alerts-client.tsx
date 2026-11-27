@@ -2,6 +2,7 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { useQuery, useQueryClient, useMutation } from "@tanstack/react-query";
+import { livePolling } from "@/lib/live-polling";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
@@ -88,7 +89,7 @@ function toRule(v: FormValues): AlertRule {
 export function AlertsClient({ initial, metrics, stations }: { initial: AlertsData; metrics: MetricOption[]; stations: { id: string; name: string }[] }) {
   const qc = useQueryClient();
   const router = useRouter();
-  const { data } = useQuery({ queryKey: ["alerts"], queryFn: () => apiGet<AlertsData>("/api/alerts"), initialData: initial, refetchInterval: 60_000 });
+  const { data } = useQuery({ queryKey: ["alerts"], queryFn: () => apiGet<AlertsData>("/api/alerts"), initialData: initial, ...livePolling(60_000) });
   const [editing, setEditing] = useState<AlertRule | null | "new">(null);
   const rulesPg = usePagination(data.rules, 10);
 

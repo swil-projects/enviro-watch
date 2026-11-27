@@ -1,6 +1,7 @@
 "use client";
 import Link from "next/link";
 import { useQuery } from "@tanstack/react-query";
+import { livePolling } from "@/lib/live-polling";
 import { NetworkPulse } from "./network-pulse";
 import { Button } from "@/components/ui/button";
 import { Activity, AlertTriangle, Cpu, Plug, Radio, WifiOff } from "lucide-react";
@@ -21,7 +22,7 @@ export function OverviewClient({ initial, stations, metrics }: { initial: Overvi
     queryKey: ["overview"],
     queryFn: ({ signal }) => apiGet<Overview>("/api/dashboard/overview", { signal }),
     initialData: initial,
-    refetchInterval: initial.refreshIntervalSeconds * 1000,
+    ...livePolling(initial.refreshIntervalSeconds * 1000),
   });
   const k = data.kpis;
   const stationPg = usePagination(data.stations, 6);

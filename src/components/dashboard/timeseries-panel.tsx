@@ -1,6 +1,7 @@
 "use client";
 import { useMemo, useState } from "react";
 import { useQuery } from "@tanstack/react-query";
+import { livePolling } from "@/lib/live-polling";
 import { AlertCircle, Info, LineChart } from "lucide-react";
 import { Card, CardBody, CardHeader } from "@/components/ui/card";
 import { Select } from "@/components/ui/field";
@@ -64,7 +65,7 @@ export function TimeseriesPanel({
     queryKey: ["timeseries", metric, selected.join(","), rangeToQuery(range)],
     queryFn: ({ signal }) => apiGet<TimeseriesResult>(`/api/analytics/timeseries?metric=${encodeURIComponent(metric)}&stations=${encodeURIComponent(selected.join(","))}&${rangeToQuery(range)}`, { signal }),
     enabled: Boolean(metric) && selected.length > 0,
-    refetchInterval: range.range === "custom" ? false : 60_000,
+    ...livePolling(range.range === "custom" ? false : 60_000),
   });
 
   const data = q.data;
