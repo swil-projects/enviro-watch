@@ -55,7 +55,7 @@ export default function LoginPage() {
           <ShieldCheck size={18} aria-hidden />
         </div>
         <div className="ew-login-loginContent">
-          <BrandLogo size="sm" priority className="ew-login-logo" />
+          <BrandLogo size="sm" priority className="ew-login-logo mx-auto flex" />
           <div className="ew-login-welcome">
             <h2 id="login-heading">Your environment.<br /> In perspective.</h2>
             <p>Welcome back. Sign in to your monitoring workspace.</p>
